@@ -1,0 +1,54 @@
+services:
+  nginx:
+    image: doyoque/nginx:alpine
+    container_name: doyoque-nginx
+    restart: unless-stopped
+    tty: true
+    working_dir: /app
+    depends_on:
+      - blog
+    volumes:
+      - doyoque-app:/app
+    ports:
+      - "8000:80"
+    networks:
+      - doyoque-network
+
+  blog:
+    image: doyoque/php-8.1-fpm:alpine
+    container_name: doyoque-blog
+    restart: unless-stopped
+    tty: true
+    working_dir: /app
+    volumes:
+      - doyoque-app:/app
+    networks:
+      - doyoque-network
+
+  redis:
+    image: redis:alpine
+    container_name: doyoque-redis
+    restart: unless-stopped
+    tty: true
+    networks:
+      - doyoque-network
+
+  echo:
+    image: doyoque/node-14.16:alpine
+    container_name: doyoque-echo
+    restart: unless-stopped
+    tty: true
+    depends_on:
+      - blog
+      - redis
+    networks:
+      - doyoque-network
+
+networks:
+  doyoque-network:
+    driver: bridge
+
+volumes:
+  doyoque-db:
+    driver: local
+  doyoque-app:
