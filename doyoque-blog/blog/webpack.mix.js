@@ -15,7 +15,7 @@ mix.browserSync({
     proxy: `localhost:8000`,
 });
 
-mix.js('resources/js/app.js', 'public/js').vue()
+mix.js('resources/js/app.js', 'public/js').vue().sourceMaps()
     .postCss('resources/css/app.css', 'public/css', [
         require('tailwindcss'),
     ]);

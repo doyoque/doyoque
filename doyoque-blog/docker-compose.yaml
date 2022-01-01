@@ -1,5 +1,9 @@
 services:
   nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+      network: host
     image: doyoque/nginx:alpine
     container_name: doyoque-nginx
     restart: unless-stopped
@@ -15,6 +19,10 @@ services:
       - doyoque-network
 
   blog:
+    build:
+      context: ./blog
+      dockerfile: Dockerfile
+      network: host
     image: doyoque/php-8.1-fpm:alpine
     container_name: doyoque-blog
     restart: unless-stopped
@@ -34,6 +42,10 @@ services:
       - doyoque-network
 
   echo:
+    build:
+      context: ./echo
+      dockerfile: Dockerfile
+      network: host
     image: doyoque/node-14.16:alpine
     container_name: doyoque-echo
     restart: unless-stopped
