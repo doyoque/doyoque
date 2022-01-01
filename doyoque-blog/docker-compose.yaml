@@ -12,7 +12,7 @@ services:
     depends_on:
       - blog
     volumes:
-      - doyoque-app:/app
+      - ./blog/:/app
     ports:
       - "8000:80"
     networks:
@@ -29,7 +29,7 @@ services:
     tty: true
     working_dir: /app
     volumes:
-      - doyoque-app:/app
+      - ./blog/:/app
     networks:
       - doyoque-network
 
@@ -53,6 +53,8 @@ services:
     depends_on:
       - blog
       - redis
+    ports:
+      - "6001:6001"
     networks:
       - doyoque-network
 
@@ -63,4 +65,3 @@ networks:
 volumes:
   doyoque-db:
     driver: local
-  doyoque-app:

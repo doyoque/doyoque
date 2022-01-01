@@ -12,9 +12,7 @@ chown -R $USER:www-data bootstrap/cache
 chmod -R 775 storage
 chmod -R 775 bootstrap/cache
 php /app/artisan key:generate
-php /app/artisan config:cache
-php /app/artisan route:cache
-php /app/artisan view:cache
+# php /app/artisan config:cache
 rm -rf .env
 /usr/bin/supervisord -n -c /etc/supervisord.conf
 
