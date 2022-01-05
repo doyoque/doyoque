@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/{any}', function () {
-//     return view('index');
-// })->where('any', '.*');
+Route::get('/{any}', function () {
+    return view('index');
+})->where('any', '.*');
 
-Route::get('test-broadcast', function () {
-    broadcast(new \App\Events\NewContentEvent);
-});
+// Route::get('test-broadcast', function () {
+//     broadcast(new \App\Events\NewContentEvent);
+// });

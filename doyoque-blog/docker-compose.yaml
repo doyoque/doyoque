@@ -17,6 +17,20 @@ services:
       - "8000:80"
     networks:
       - doyoque-network
+  db:
+    image: mysql
+    command: mysqld --default-authentication-plugin=mysql_native_password
+    container_name: doyoque-db
+    restart: unless-stopped
+    tty: true
+    environment:
+      MYSQL_DATABASE: laravel
+      MYSQL_USER: laravel
+      MYSQL_ROOT_PASSWORD: secret
+    volumes:
+      - doyoque-db:/var/lib/mysql
+    networks:
+      - doyoque-network
 
   blog:
     build:
