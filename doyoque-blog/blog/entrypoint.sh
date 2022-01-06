@@ -14,8 +14,7 @@ chmod -R 775 bootstrap/cache
 php /app/artisan migrate --seed
 php /app/artisan passport:install --force
 php /app/artisan key:generate
-php /app/artisan config:cache
-rm -rf .env
+# php /app/artisan config:cache
 /usr/bin/supervisord -n -c /etc/supervisord.conf
 
 exec "$@"

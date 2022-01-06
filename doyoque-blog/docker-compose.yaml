@@ -71,6 +71,8 @@ services:
     tty: true
     networks:
       - doyoque-network
+    depends_on:
+      - db
 
   echo:
     build:
