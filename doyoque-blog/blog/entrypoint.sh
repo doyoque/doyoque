@@ -11,8 +11,8 @@ chown -R $USER:www-data storage
 chown -R $USER:www-data bootstrap/cache
 chmod -R 775 storage
 chmod -R 775 bootstrap/cache
-php /app/artisan passport:install --force
 php /app/artisan migrate --seed
+php /app/artisan passport:install --force
 php /app/artisan key:generate
 php /app/artisan config:cache
 rm -rf .env

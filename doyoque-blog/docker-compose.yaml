@@ -17,6 +17,7 @@ services:
       - "8000:80"
     networks:
       - doyoque-network
+
   db:
     image: mysql
     command: mysqld --default-authentication-plugin=mysql_native_password
@@ -32,6 +33,20 @@ services:
     networks:
       - doyoque-network
 
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: doyoque-phpmyadmin
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "8001:80"
+    environment:
+      - PMA_HOST=db
+    networks:
+      - doyoque-network
+    depends_on:
+      - db
+
   blog:
     build:
       context: ./blog
@@ -46,6 +61,8 @@ services:
       - ./blog/:/app
     networks:
       - doyoque-network
+    depends_on:
+      - db
 
   redis:
     image: redis:alpine
