@@ -71,6 +71,8 @@ services:
     tty: true
     networks:
       - doyoque-network
+    volumes:
+      - doyoque-redis:/data
     depends_on:
       - db
 
@@ -90,6 +92,8 @@ services:
       - "6001:6001"
     networks:
       - doyoque-network
+    volumes:
+      - doyoque-echo:/app
 
 networks:
   doyoque-network:
@@ -97,4 +101,8 @@ networks:
 
 volumes:
   doyoque-db:
+    driver: local
+  doyoque-echo:
+    driver: local
+  doyoque-redis:
     driver: local
