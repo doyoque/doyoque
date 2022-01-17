@@ -23,6 +23,10 @@ blog_build() {
     docker-compose --file doyoque-blog/docker-compose.yaml up --build --detach
 }
 
+blog() {
+    docker-compose --file doyoque-blog/docker-compose.yaml exec blog sh
+}
+
 if [[ "${optionsArr[0]}" == "blog" ]]
 then
     if [[ "${optionsArr[1]}" == "build" ]]
@@ -33,6 +37,9 @@ then
     then
         echo "${REDCOLOR}Stop blog stacks...${ENDCOLOR}"
         blog_stop
+    elif [[ "${optionsArr[1]}" == "exec" ]]
+    then
+        blog
     else
         echo "${GREENCOLOR}Run blog stacks...${ENDCOLOR}"
         blog_run
