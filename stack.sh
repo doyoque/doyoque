@@ -9,39 +9,39 @@ ENDCOLOR="\e[0m"
 clear
 
 blog_run() {
-    docker-compose --file doyoque-blog/docker-compose.yaml up --detach
+    docker-compose --file doyoque-blog/compose-dev.yaml up --detach
 }
 
 blog_stop() {
-    docker-compose --file doyoque-blog/docker-compose.yaml down --remove-orphans
+    docker-compose --file doyoque-blog/compose-dev.yaml down --remove-orphans
     docker volume rm doyoque-blog_doyoque-db
     docker volume rm doyoque-blog_doyoque-echo
     docker volume rm doyoque-blog_doyoque-redis
 }
 
 blog_build() {
-    docker-compose --file doyoque-blog/docker-compose.yaml up --build --detach
+    docker-compose --file doyoque-blog/compose-dev.yaml up --build --detach
 }
 
 blog() {
-    docker-compose --file doyoque-blog/docker-compose.yaml exec blog sh
+    docker-compose --file doyoque-blog/compose-dev.yaml exec blog sh
 }
 
 if [[ "${optionsArr[0]}" == "blog" ]]
 then
     if [[ "${optionsArr[1]}" == "build" ]]
     then
-        echo "${GREENCOLOR}Build blog stacks...${ENDCOLOR}"
+        echo -e "${GREENCOLOR}Build blog stacks...${ENDCOLOR}"
         blog_build
     elif [[ "${optionsArr[1]}" == "stop" ]]
     then
-        echo "${REDCOLOR}Stop blog stacks...${ENDCOLOR}"
+        echo -e "${REDCOLOR}Stop blog stacks...${ENDCOLOR}"
         blog_stop
     elif [[ "${optionsArr[1]}" == "exec" ]]
     then
         blog
     else
-        echo "${GREENCOLOR}Run blog stacks...${ENDCOLOR}"
+        echo -e "${GREENCOLOR}Run blog stacks...${ENDCOLOR}"
         blog_run
     fi
 fi
