@@ -15,7 +15,15 @@ class CreateContentsTable extends Migration
     {
         Schema::create('contents', function (Blueprint $table) {
             $table->id();
+            $table->string('title', 255);
+            $table->text('content');
             $table->timestamps();
+            $table->softDeletes();
+        });
+
+        Schema::table('contents', function (Blueprint $table) {
+            $table->unsignedBigInteger('author_id')->comment('belongs to users.id')->nullable()->after('content');
+            $table->foreign('author_id')->references('id')->on('users')->onDelete('SET NULL');
         });
     }
 
@@ -26,6 +34,11 @@ class CreateContentsTable extends Migration
      */
     public function down()
     {
+        Schema::table('contents', function (Blueprint $table) {
+            $table->dropForeign('contents_author_id_foreign');
+            $table->dropColumn(['role_id']);
+        });
+
         Schema::dropIfExists('contents');
     }
 }
