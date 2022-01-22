@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
     UserController,
+    Auth\LoginController,
 };
 
 /*
@@ -16,7 +17,12 @@ use App\Http\Controllers\{
 |
 */
 
-Route::group(['middleware' => 'auth:api', 'prefix' => 'v1'], function () {
-    Route::get('user', [UserController::class, 'index']);
+Route::group(['prefix' => 'v1'], function () {
+
+    Route::post('login', [LoginController::class, 'login']);
+
+    Route::group(['middleware' => 'auth:api'], function () {
+        Route::get('user', [UserController::class, 'index']);
+    });
 });
 
