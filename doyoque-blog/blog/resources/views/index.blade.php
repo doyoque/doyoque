@@ -9,9 +9,7 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
     <body>
-        <div id="app">
-            <App></App>
-        </div>
+        <div id="app"></div>
         <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
         {{-- <script type="text/javascript" src="{{ asset('js/manifest.js') }}"></script> --}}
         {{-- <script type="text/javascript" src="{{ asset('js/vendor.js') }}"></script> --}}
