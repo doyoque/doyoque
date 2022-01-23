@@ -21,7 +21,7 @@ class CreateRolesTable extends Migration
         });
 
         Schema::table('users', function (Blueprint $table) {
-            $table->unsignedBigInteger('role_id')->nullable();
+            $table->unsignedBigInteger('role_id')->nullable()->after('remember_token');
             $table->foreign('role_id')->references('id')->on('roles')->onDelete('SET NULL');
             $table->softDeletes();
         });
