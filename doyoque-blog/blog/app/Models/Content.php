@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\{
+    Factories\HasFactory,
+    Model
+};
 
 class Content extends Model
 {
@@ -17,6 +19,16 @@ class Content extends Model
     protected $fillable = [
         'title',
         'content',
-        'author_id',
+        'user_id',
     ];
+
+    /**
+     * Content belongs to user.
+     *
+     * @return this
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

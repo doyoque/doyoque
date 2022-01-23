@@ -15,7 +15,7 @@ class ContentSeeder extends Seeder
     public function run()
     {
         Content::factory()->count(10)->create([
-            'author_id' => 1,
+            'user_id' => 1,
         ]);
     }
 }

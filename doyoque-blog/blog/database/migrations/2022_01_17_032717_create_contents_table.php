@@ -22,8 +22,8 @@ class CreateContentsTable extends Migration
         });
 
         Schema::table('contents', function (Blueprint $table) {
-            $table->unsignedBigInteger('author_id')->comment('belongs to users.id')->nullable()->after('content');
-            $table->foreign('author_id')->references('id')->on('users')->onDelete('SET NULL');
+            $table->unsignedBigInteger('user_id')->comment('belongs to users.id')->nullable()->after('content');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('SET NULL');
         });
     }
 
@@ -35,7 +35,7 @@ class CreateContentsTable extends Migration
     public function down()
     {
         Schema::table('contents', function (Blueprint $table) {
-            $table->dropForeign('contents_author_id_foreign');
+            $table->dropForeign('contents_user_id_foreign');
             $table->dropColumn(['role_id']);
         });
 

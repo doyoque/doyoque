@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
-    UserController,
     Auth\LoginController,
+    UserController,
+    ContentController,
 };
 
 /*
@@ -22,6 +23,7 @@ Route::group(['prefix' => 'v1'], function () {
     Route::post('login', [LoginController::class, 'login']);
 
     Route::group(['middleware' => 'auth:api'], function () {
+        Route::post('content', [ContentController::class, 'store']);
         Route::get('user', [UserController::class, 'index']);
     });
 });
