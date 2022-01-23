@@ -22,6 +22,7 @@ Route::group(['prefix' => 'v1'], function () {
 
     Route::post('login', [LoginController::class, 'login']);
 
+    Route::get('content', [ContentController::class, 'index']);
     Route::group(['middleware' => 'auth:api'], function () {
         Route::post('content', [ContentController::class, 'store']);
         Route::get('user', [UserController::class, 'index']);

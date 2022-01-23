@@ -20,6 +20,16 @@ class ContentController extends Controller
     public $status = Response::HTTP_OK;
 
     /**
+     * Get all content.
+     *
+     * @return json
+     */
+    public function index()
+    {
+        return response(Content::all(), $this->status);
+    }
+
+    /**
      * Store content.
      *
      * @param App\Http\Requests\ContentRequest $request

@@ -60,6 +60,27 @@ class ContentTest extends TestCase
         ];
 
         $this->postJson('api/v1/content', $data)
-             ->assertStatus(201);
+             ->assertStatus(201)
+             ->assertJsonStructure([
+                 'id',
+                 'message',
+             ]);
+    }
+
+    /** @teest */
+    public function contents_can_be_retrive()
+    {
+        $this->getJson('api/v1/content')
+             ->assertStatus(200)
+             ->assertJsonStructure([
+                 '*' => [
+                     'id',
+                     'title',
+                     'content',
+                     'created_at',
+                     'updated_at',
+                     'deleted_at',
+                 ],
+             ]);
     }
 }
