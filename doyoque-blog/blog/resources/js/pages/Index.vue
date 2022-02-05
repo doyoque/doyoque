@@ -1,14 +1,14 @@
 <template>
   <div>
-    <router-view />
+    <h1>hello world</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: "App",
+  name: 'Index',
   mounted() {
-    console.log("App working!");
-  },
-};
+    console.log('Index component works!')
+  }
+}
 </script>
