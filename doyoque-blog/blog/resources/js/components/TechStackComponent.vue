@@ -1,7 +1,13 @@
 <template>
   <div :class="['panel-card--blue-500', classes]">
-    <h1>Welcome to doyoque-blog!</h1>
-    <p>this blog it's ain't much, but like a place that keep reminding me about something that I easily forget.</p>
+    <h1>Preferably tech-stack:</h1>
+    <ul class="list-disc pl-4">
+      <li>PHP</li>
+      <li>Golang</li>
+      <li>Nodejs</li>
+      <li>Docker</li>
+      <li>MySQL</li>
+    </ul>
   </div>
 </template>
 
@@ -9,10 +15,10 @@
 import { computed, reactive } from 'vue'
 
 export default {
-  name: 'GreetingComponent',
+  name: 'TechStackComponent',
   props: {
     colStart: { type: Number, default: 1 },
-    colEnd: { type: Number, default: 7 }
+    colEnd: { type: Number, default: 3 }
   },
   setup(props) {
     props = reactive(props)
