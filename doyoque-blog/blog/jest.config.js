@@ -1,10 +1,12 @@
 // jest.config.js
 module.exports = {
   collectCoverage: true,
-  collectCoverageFrom: [ 'resources/js/**/*.{js,jsx,ts,tsx,vue}' ],
+  collectCoverageFrom: [
+    'resources/js/components/*.{js,vue}',
+    'resources/js/pages/*.{js,vue}'
+  ],
   coverageDirectory: './coverage',
   coverageReporters: [ 'html', 'lcov', 'text-summary' ],
-  testRegex: 'resources/js/tests/.*.spec.js$',
   moduleFileExtensions: [ 'js', 'json', 'vue' ],
   transform: {
     '^.+\\.js$': '<rootDir>/node_modules/babel-jest',
@@ -12,7 +14,8 @@ module.exports = {
   },
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/resources/js/$1',
-    '^@pages/(.*)$': '<rootDir>/resources/js/pages/$1'
+    '^@pages/(.*)$': '<rootDir>/resources/js/pages/$1',
+    '^@components/(.*)$': '<rootDir>/resources/js/components/$1'
   },
   snapshotSerializers: [ 'jest-serializer-vue' ]
 }
