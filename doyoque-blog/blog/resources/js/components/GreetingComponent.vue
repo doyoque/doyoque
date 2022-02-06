@@ -1,7 +1,16 @@
 <template>
   <div :class="['panel-card--blue-500', classes]">
     <h1>Welcome to doyoque-blog!</h1>
-    <p>this blog it's ain't much, but like a place that keep reminding me about something that I easily forget.</p>
+    <p>
+      this blog it's ain't much, but like a place that keep reminding me about
+      something that I easily forget.
+    </p>
+    <p>
+      Anyway if you easly get bored with this overwhelming index page, go
+      straight to the
+      <a href="#" class="underline decoration-sky-500">blog</a> content section
+      (consider this page as my <b>CV</b> section).
+    </p>
   </div>
 </template>
 
@@ -31,4 +40,3 @@ export default {
   }
 }
 </script>
-
