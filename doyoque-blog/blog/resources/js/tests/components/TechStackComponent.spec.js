@@ -10,7 +10,7 @@ describe('TechStack component', () => {
   })
 
   it ('TechStack component contain list of tech-stack', () => {
-    expect(wrapper.text()).toContain('PHP')
+    expect(wrapper.text()).toContain('Laravel')
     expect(wrapper.text()).toContain('Golang')
     expect(wrapper.text()).toContain('Nodejs')
     expect(wrapper.text()).toContain('Docker')

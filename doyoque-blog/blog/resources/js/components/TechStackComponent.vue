@@ -1,12 +1,8 @@
 <template>
   <div :class="['panel-card--blue-500', classes]">
     <h1>Preferably tech-stack:</h1>
-    <ul class="list-disc pl-4">
-      <li>PHP</li>
-      <li>Golang</li>
-      <li>Nodejs</li>
-      <li>Docker</li>
-      <li>MySQL</li>
+    <ul class="list-disc list-inside">
+      <li v-for="(item, index) in techStack" :key="index">{{ item }}</li>
     </ul>
   </div>
 </template>
@@ -16,6 +12,20 @@ import { computed, reactive } from 'vue'
 
 export default {
   name: 'TechStackComponent',
+  data() {
+    return {
+      techStack: [
+        'Laravel',
+        'MySQL',
+        'Ruby',
+        'Nodejs',
+        'TypeScript',
+        'Docker',
+        'Golang',
+        'Python'
+      ]
+    }
+  },
   props: {
     colStart: { type: Number, default: 1 },
     colEnd: { type: Number, default: 3 }
@@ -37,4 +47,3 @@ export default {
   }
 }
 </script>
-
