@@ -12,6 +12,18 @@ blog_run() {
   docker-compose --file doyoque-blog/compose-dev.yaml up --detach
 }
 
+blog_prod() {
+  docker-compose --file doyoque-blog/compose-prod.yaml up --detach
+}
+
+blog_prod_stop() {
+  docker-compose --file doyoque-blog/compose-prod.yaml down --remove-orphans
+  docker volume rm doyoque-blog_doyoque-blog
+  docker volume rm doyoque-blog_doyoque-db
+  docker volume rm doyoque-blog_doyoque-echo
+  docker volume rm doyoque-blog_doyoque-redis
+}
+
 blog_stop() {
   docker-compose --file doyoque-blog/compose-dev.yaml down --remove-orphans
   docker volume rm doyoque-blog_doyoque-db
@@ -42,10 +54,19 @@ then
   then
     echo -e "${GREENCOLOR}Build blog stacks...${ENDCOLOR}"
     blog_build
+  elif [[ "${optionsArr[1]}" == "prod" ]]
+  then
+    echo -e "${REDCOLOR}Run blog prod stacks...${ENDCOLOR}"
+    blog_prod
   elif [[ "${optionsArr[1]}" == "stop" ]]
   then
     echo -e "${REDCOLOR}Stop blog stacks...${ENDCOLOR}"
-    blog_stop
+    if [[ "${optionsArr[2]}" == "p" ]]
+    then
+      blog_prod_stop
+    else
+      blog_stop
+    fi
   elif [[ "${optionsArr[1]}" == "watch" ]]
   then
     blog_watch
