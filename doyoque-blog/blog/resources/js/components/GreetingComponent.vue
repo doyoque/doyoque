@@ -1,5 +1,5 @@
 <template>
-  <div :class="['panel-card--blue-500', classes]">
+  <div :class="['panel-card--blue-500', classes ? classes : colClasses]">
     <h1>Welcome to doyoque-blog!</h1>
     <p>
       this blog it's ain't much, but like a place that keep reminding me about
@@ -22,6 +22,11 @@ export default {
   props: {
     colStart: { type: Number, default: 1 },
     colEnd: { type: Number, default: 7 }
+  },
+  data() {
+    return {
+      colClasses:'col-start-1 col-end-7'
+    }
   },
   setup(props) {
     props = reactive(props)
