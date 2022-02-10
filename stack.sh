@@ -32,6 +32,10 @@ blog_test() {
   npm run test --prefix doyoque-blog/blog/
 }
 
+blog_watch() {
+  npm run watch --prefix doyoque-blog/blog/
+}
+
 if [[ "${optionsArr[0]}" == "blog" ]]
 then
   if [[ "${optionsArr[1]}" == "build" ]]
@@ -42,6 +46,9 @@ then
   then
     echo -e "${REDCOLOR}Stop blog stacks...${ENDCOLOR}"
     blog_stop
+  elif [[ "${optionsArr[1]}" == "watch" ]]
+  then
+    blog_watch
   elif [[ "${optionsArr[1]}" == "test" ]]
   then
     blog_test
