@@ -16,9 +16,12 @@ mix.browserSync({
 });
 
 mix.js('resources/js/app.js', 'public/js').vue().sourceMaps()
-    .postCss('resources/css/app.css', 'public/css', [
-        require('tailwindcss'),
-    ]);
+    .postCss('resources/css/app.css', 'public/css', [ require('tailwindcss') ])
+    .version();
+
+// if (mix.inProduction()) {
+//   mix.version();
+// }
 
 mix.alias({
     '@': path.join(__dirname, 'resources/js'),

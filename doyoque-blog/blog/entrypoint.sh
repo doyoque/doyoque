@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 cp .env.example .env
-sed -i -e 's/MIX_PORT=8000/MIX_PORT=8001/g' .env
+sed -i -e 's/MIX_PORT=8000/MIX_PORT=8000/g' .env
 sed -i -e 's/DB_HOST=127.0.0.1/DB_HOST=db/g' .env
 sed -i -e 's/DB_PASSWORD=/DB_PASSWORD=secret/g' .env
 sed -i -e 's/BROADCAST_DRIVER=log/BROADCAST_DRIVER=redis/g' .env

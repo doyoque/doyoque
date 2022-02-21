@@ -1,4 +1,5 @@
 module.exports = {
+    enable: true,
     content: [
       './resources/**/*.blade.php',
       './resources/**/*.js',
