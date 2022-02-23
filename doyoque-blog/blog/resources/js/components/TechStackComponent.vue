@@ -27,7 +27,7 @@ export default {
     }
   },
   props: {
-    colStart: { type: Number, default: 1 },
+    colStart: { type: Number, default: 2 },
     colEnd: { type: Number, default: 3 }
   },
   setup(props) {
