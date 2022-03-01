@@ -32,7 +32,7 @@ blog_stop() {
 }
 
 blog_build() {
-  docker-compose --file doyoque-blog/compose-prod.yaml up --build --detach
+  docker-compose --file doyoque-blog/compose-prod.yaml build --no-cache
 }
 
 blog() {
