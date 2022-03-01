@@ -13,7 +13,6 @@ chmod -R 775 storage
 chmod -R 775 bootstrap/cache
 sleep 15s
 php /app/artisan migrate --seed
-php /app/artisan passport:install --force
 php /app/artisan key:generate
 /usr/bin/supervisord -n -c /etc/supervisord.conf
 

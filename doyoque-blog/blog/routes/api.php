@@ -1,11 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{
-    Auth\LoginController,
-    UserController,
-    ContentController,
-};
 
 /*
 |--------------------------------------------------------------------------
@@ -19,13 +14,6 @@ use App\Http\Controllers\{
 */
 
 Route::group(['prefix' => 'v1'], function () {
-
-    Route::post('login', [LoginController::class, 'login']);
-
-    Route::get('content', [ContentController::class, 'index']);
-    Route::group(['middleware' => 'auth:api'], function () {
-        Route::post('content', [ContentController::class, 'store']);
-        Route::get('user', [UserController::class, 'index']);
-    });
+    //
 });
 
