@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/**
+common mobile screen min-width: 375px
+make sure to style for mobile first
+
+`sm` min-width: 640px
+`md` min-width: 768px
+`lg` min-width: 1024px
+`xl` min-width: 1280px
+`2xl` min-width: 1536px
+*/
+
 body {
     margin: 0 auto;
 }
@@ -11,7 +22,73 @@ body {
     margin: 0 auto;
 }
 
-.panel-card--blue-500 {
-    @apply border-2 border-blue-300 rounded-md p-2 m-2 bg-white;
+@media only screen and (max-width: 639px) {
+    ul {
+        columns: 2;
+        -webkit-columns: 2;
+        -moz-columns: 2;
+    }
 }
 
+.txt-c--sm-txt-r--md-txt-r--xl-txt-r {
+    @apply
+        sm:text-right
+        md:text-right
+        xl:text-right
+}
+
+.txt-c--sm-txt-l--md-txt-l--xl-txt-l {
+    @apply
+        sm:text-left
+        md:text-left
+        xl:text-left
+}
+
+.base-grid-cols {
+    @apply
+        xl:grid-cols-6
+        md:grid-cols-4
+        sm:grid-cols-3
+}
+
+.panel-card--blue-500 {
+    @apply
+        border-2
+        border-blue-300
+        rounded-md
+        p-2 m-2
+        bg-white
+}
+
+.xl-c-st-2--xl-c-sp-4--md-c-st-1--md-c-sp-5--sm-c-s-2 {
+    @apply
+        xl:col-start-2
+        xl:col-span-4
+        md:col-start-1
+        md:col-span-5
+        sm:col-span-3
+}
+
+.xl-c-s-2--xl-c-e-3--md-c-s-1--md-e-2 {
+    @apply
+        xl:col-start-2
+        xl:col-end-3
+        md:col-start-1
+        md:col-end-2
+        sm:col-end-2
+}
+
+.xl-c-st-5--md-c-st-4 {
+    @apply
+        xl:col-start-5
+        md:col-start-4
+}
+
+.xl-c-st-2--xl-c-sp-2--md-c-st-1--md-c-sp-2--sm-sp-2 {
+    @apply
+        xl:col-start-2
+        xl:col-span-2
+        md:col-start-1
+        md:col-span-2
+        sm:col-span-2
+}

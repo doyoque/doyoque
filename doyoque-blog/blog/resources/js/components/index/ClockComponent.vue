@@ -1,6 +1,6 @@
 <template>
-  <div :class="['panel-card--blue-500 col-start-5']">
-    <h1>Time: {{hours}}:{{minutes}}:{{seconds}}</h1>
+  <div :class="['panel-card--blue-500 xl:col-start-5 md:col-start-4']">
+    <h1 class="text-center txt-c--sm-txt-r--md-txt-r--xl-txt-r">Time: {{hours}}:{{minutes}}:{{seconds}}</h1>
   </div>
 </template>
 

@@ -6,6 +6,7 @@
 
         <title>{{ config('app.name') }}</title>
 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css">
         <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
     </head>
     <body class="bg-slate-200">

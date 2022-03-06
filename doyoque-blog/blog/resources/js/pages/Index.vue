@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-6 gap-x-4">
+  <div class="grid base-grid-cols">
     <greetingCompoent />
     <randomQuoteComponent />
     <clockComponent />
