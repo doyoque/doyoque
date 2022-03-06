@@ -8,5 +8,8 @@ describe('Index', () => {
   it ('Index page contain welcome greeting', () => {
     expect(wrapper.text()).toContain(message)
   })
-})
 
+  it ('Should return name of componet Index', () => {
+    expect(wrapper.vm.$options.name).toBe('Index')
+  })
+})
