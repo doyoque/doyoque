@@ -36,7 +36,7 @@ class CreateContentsTable extends Migration
     {
         Schema::table('contents', function (Blueprint $table) {
             $table->dropForeign('contents_user_id_foreign');
-            $table->dropColumn(['role_id']);
+            $table->dropColumn(['user_id']);
         });
 
         Schema::dropIfExists('contents');

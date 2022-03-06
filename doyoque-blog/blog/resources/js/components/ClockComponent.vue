@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'RandomQuoteComponent',
+  name: 'ClockComponent',
   data() {
     return {
       hours: 0,

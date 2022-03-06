@@ -2,6 +2,7 @@ import clockComponent from '@components/ClockComponent'
 import { mount } from '@vue/test-utils'
 
 describe('Clock component', () => {
+  jest.useFakeTimers()
   const wrapper = mount(clockComponent)
   const message = 'Time:'
 
@@ -19,6 +20,16 @@ describe('Clock component', () => {
 
   it ('Data seconds must begin with 0', () => {
     expect(wrapper.vm.seconds).toEqual(0)
+  })
+
+  it ('Data hours must have value after 1 second', () => {
+    wrapper.vm.clockTime()
+    jest.advanceTimersByTime(1000)
+
+    const date = new Date()
+    const hours = wrapper.vm.checkDigit(date.getHours())
+
+    expect(wrapper.vm.hours).toEqual(hours)
   })
 
   it ('checkDigit return string with 0 at beginning', () => {
