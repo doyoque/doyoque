@@ -1,4 +1,4 @@
-import clockComponent from '@components/ClockComponent'
+import clockComponent from '@components/index/ClockComponent'
 import { mount } from '@vue/test-utils'
 
 describe('Clock component', () => {

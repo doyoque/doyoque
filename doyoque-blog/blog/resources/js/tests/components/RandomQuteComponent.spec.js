@@ -1,4 +1,4 @@
-import RandomQuote from '@components/RandomQuoteComponent'
+import RandomQuote from '@components/index/RandomQuoteComponent'
 import { mount } from '@vue/test-utils'
 
 describe('Random Quote component', () => {

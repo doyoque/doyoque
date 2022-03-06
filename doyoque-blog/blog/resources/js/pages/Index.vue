@@ -10,10 +10,10 @@
 
 <script>
 import greetingCompoent from '@components/GreetingComponent'
-import techStackComponent from '@components/TechStackComponent'
 import FooterComponent from '@components/FooterComponent'
-import RandomQuoteComponent from '@components/RandomQuoteComponent'
-import ClockComponent from '@components/ClockComponent'
+import techStackComponent from '@components/index/TechStackComponent'
+import RandomQuoteComponent from '@components/index/RandomQuoteComponent'
+import ClockComponent from '@components/index/ClockComponent'
 
 export default {
   name: 'Index',

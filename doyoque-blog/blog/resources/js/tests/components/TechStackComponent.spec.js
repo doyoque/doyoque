@@ -1,4 +1,4 @@
-import TechStack from '@components/TechStackComponent'
+import TechStack from '@components/index/TechStackComponent'
 import { mount } from '@vue/test-utils'
 
 describe('TechStack component', () => {
