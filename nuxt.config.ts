@@ -2,12 +2,18 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
-    '@nuxtjs/tailwindcss',
+    "@nuxtjs/tailwindcss",
+    [
+      "@nuxtjs/eslint-module",
+      {
+        lintOnStart: false,
+      },
+    ],
   ],
   tailwindcss: {
-    cssPath: '~/assets/css/tailwind.css',
-    configPath: 'tailwind.config.js',
+    cssPath: "~/assets/css/tailwind.css",
+    configPath: "tailwind.config.js",
     exposeConfig: false,
     viewer: true,
-  }
-})
+  },
+});
