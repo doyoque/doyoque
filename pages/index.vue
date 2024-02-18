@@ -39,10 +39,10 @@ onBeforeUnmount(() => {
 <template>
   <div id="index-pages" class="index__pages">
     <section class="text-center">
-      <div class="sm:text-xs 2xl:text-4xl font-black mb-5">
+      <div class="text-4xl font-black mb-5">
         <h1 class="text-white">{{ nickName }}</h1>
       </div>
-      <div class="text-xs 2xl:text-4xl">
+      <div class="text-4xl">
         <ClientOnly>
           <p
             class="text-white"
