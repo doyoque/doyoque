@@ -37,7 +37,10 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div id="index-pages" class="index__pages">
+  <div
+    id="index-pages"
+    class="col-span-3 row-span-4 col-start-2 bg-slate-800 px-32 py-64 rounded-md"
+  >
     <section class="text-center">
       <div class="text-4xl font-black mb-5">
         <h1 class="text-white">{{ nickName }}</h1>
