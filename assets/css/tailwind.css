@@ -14,10 +14,10 @@
   @apply col-span-3 col-start-2 row-start-4 bg-slate-800 text-center rounded-md p-12;
 }
 
-.footer__wrapper {
+/*.footer__wrapper {
   @apply grid grid-cols-3 grid-rows-3 gap-2;
-}
+}*/
 
-.ul_footer {
+/*.ul_footer {
   @apply flex flex-wrap items-center justify-center space-x-5 gap-y-4;
-}
+}*/
