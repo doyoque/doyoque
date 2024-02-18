@@ -6,9 +6,6 @@ export default {
     './pages/**/*.vue',
     './nuxt.config.{js,ts}'
   ],
-  theme: {
-    extend: {}
-  },
   plugins: [],
   theme: {
     screens: {

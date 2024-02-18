@@ -7,6 +7,13 @@ useHead({
     }
   ]
 })
+
+useSeoMeta({
+  title: 'Abiyoga Bayu Primadi - Doyoque',
+  ogTitle: 'Abiyoga Bayu Primadi - Doyoque',
+  description: 'Just a developer.',
+  ogDescription: 'Just a developer.'
+})
 </script>
 <template>
   <div>
