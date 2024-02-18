@@ -4,7 +4,9 @@ export default {
     './components/**/*.{js,vue,ts}',
     './layouts/**/*.{vue,ts}',
     './pages/**/*.vue',
-    './nuxt.config.{js,ts}'
+    './nuxt.config.{js,ts}',
+    './app.vue',
+    './error.vue'
   ],
   plugins: [],
   theme: {
