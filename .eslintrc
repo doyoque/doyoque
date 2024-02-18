@@ -3,6 +3,8 @@
     "@nuxtjs/eslint-config-typescript"
   ],
   "rules": {
-    "quotes": ["error", "single"]
+    "quotes": ["error", "single"],
+    "vue/singleline-html-element-content-newline": "off",
+    "vue/multiline-html-element-content-newline": "off"
   }
 }

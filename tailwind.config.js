@@ -9,5 +9,10 @@ export default {
   theme: {
     extend: {}
   },
-  plugins: []
+  plugins: [],
+  theme: {
+    screens: {
+      '13ich': '1680px'
+    }
+  }
 }
