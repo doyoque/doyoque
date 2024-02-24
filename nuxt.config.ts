@@ -13,6 +13,14 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     [
+      '@nuxtjs/robots', 
+      {
+        UserAgent: '*',
+        Disallow: '',
+        BlankLine: true
+      }
+    ]
+    [
       '@nuxtjs/eslint-module',
       {
         lintOnStart: false
