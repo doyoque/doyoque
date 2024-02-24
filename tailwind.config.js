@@ -8,10 +8,21 @@ export default {
     './app.vue',
     './error.vue'
   ],
+  css: ['~/assets/css/tailwind.css'],
   plugins: [],
   theme: {
     screens: {
-      '13ich': '1680px'
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    }
+  },
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {}
     }
   }
 }

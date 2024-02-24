@@ -5,21 +5,21 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'en'
       },
-      charset: 'utf-8',
-      viewport: 'width=device-width, initial-scale=1'
+      charset: 'UTF-8',
+      viewport: 'width=device-width, initial-scale=1.0'
     }
   },
   devtools: { enabled: true },
   modules: [
     '@nuxtjs/tailwindcss',
     [
-      '@nuxtjs/robots', 
+      '@nuxtjs/robots',
       {
         UserAgent: '*',
         Disallow: '',
         BlankLine: true
       }
-    ]
+    ],
     [
       '@nuxtjs/eslint-module',
       {
