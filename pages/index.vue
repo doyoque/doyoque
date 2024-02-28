@@ -20,11 +20,15 @@ let intervalId
 const startInterval = () => {
   intervalId = setInterval(() => {
     description.value = randomizeDesc()
-  }, 100)
+  }, 500)
 }
 
 const stopInterval = () => {
   clearInterval(intervalId)
+}
+
+const goToStack = () => {
+  navigateTo('/stack')
 }
 
 onMounted(() => {
@@ -37,7 +41,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div id="index-pages" class="index-page">
+  <div id="index-pages" class="index-page cursor-pointer" @click="goToStack">
     <section class="text-center">
       <div class="nickname">
         <h1 class="text-white">{{ nickName }}</h1>
