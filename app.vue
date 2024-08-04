@@ -1,4 +1,9 @@
 <script setup lang="ts">
+const route = useRoute()
+const routeName = route.name
+const pageList = ['blog']
+const layoutName = pageList.includes(routeName) ? routeName : 'doyoque'
+
 useHead({
   link: [
     {
@@ -17,7 +22,7 @@ useSeoMeta({
 </script>
 <template>
   <div>
-    <NuxtLayout>
+    <NuxtLayout :name="layoutName">
       <NuxtPage />
     </NuxtLayout>
   </div>

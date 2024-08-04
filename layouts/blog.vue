@@ -6,7 +6,7 @@ useHead({
 })
 </script>
 <template>
-  <div class="default__layout">
+  <div class="doyoque__blog">
     <slot />
   </div>
 </template>

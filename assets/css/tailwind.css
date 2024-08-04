@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.default__layout {
+.doyoque__layout {
   @apply grid gap-1 grid-cols-1 grid-rows-1 sm:grid-cols-5 sm:grid-rows-4 md:grid-cols-5 md:grid-rows-4 lg:grid-cols-5 lg:grid-rows-4 xl:grid-cols-5 xl:grid-rows-4 2xl:grid-cols-5 2xl:grid-rows-4 items-center h-screen;
 }
 
