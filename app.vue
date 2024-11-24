@@ -1,28 +1,16 @@
 <script setup lang="ts">
-const route = useRoute()
-const routeName = route.name
-const pageList = ['blog']
-const layoutName = pageList.includes(routeName) ? routeName : 'doyoque'
-
-useHead({
-  link: [
-    {
-      rel: 'stylesheet',
-      href: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css'
-    }
-  ]
-})
+const layout: string = 'default'
 
 useSeoMeta({
   title: 'Abiyoga Bayu Primadi - Doyoque',
   ogTitle: 'Abiyoga Bayu Primadi - Doyoque',
-  description: 'Just a developer.',
-  ogDescription: 'Just a developer.'
+  description: 'Fullstack Developer blogging or something.',
+  ogDescription: 'Fullstack Developer blogging or something.'
 })
 </script>
 <template>
   <div>
-    <NuxtLayout :name="layoutName">
+    <NuxtLayout :name="layout">
       <NuxtPage />
     </NuxtLayout>
   </div>

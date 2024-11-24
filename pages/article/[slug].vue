@@ -3,6 +3,6 @@
 
 <template>
   <div>
-    this is index page
+    {{ $route.params.slug }} work!
   </div>
 </template>

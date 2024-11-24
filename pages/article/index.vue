@@ -3,6 +3,6 @@
 
 <template>
   <div>
-    this is index page
+    articles work!
   </div>
 </template>
