@@ -1,8 +1,9 @@
 <script setup lang="ts">
+const { data } = await useAsyncData('hello', () => queryContent('/').findOne())
 </script>
 
 <template>
-  <div>
-    this is index page
+  <div class="text-white h-screen flex items-center justify-center">
+    <ContentRenderer :value="data" />
   </div>
 </template>

@@ -13,7 +13,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   modules: [
-    '@nuxtjs/tailwindcss',
+    '@nuxtjs/tailwindcss', 
+    '@nuxt/content',
     [
       '@nuxtjs/robots',
       {
@@ -21,7 +22,7 @@ export default defineNuxtConfig({
         Disallow: '',
         BlankLine: true
       }
-    ],
+    ], 
     [
       '@nuxtjs/eslint-module',
       {
