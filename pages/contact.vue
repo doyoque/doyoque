@@ -1,4 +1,16 @@
 <script setup lang="ts">
+useSeoMeta({
+  title: 'Doyoque - Contact',
+  description: 'Contact me via Linkedin.',
+  ogTitle: 'Doyoque - Contact',
+  ogDescription: 'Contact me via Linkedin.',
+  ogType: 'article',
+  ogUrl: 'https://doyoque.vercel.app/contact',
+  twitterCard: 'summary',
+  twitterSite: '@4E4F57',
+  twitterTitle: 'Doyoque - Contact',
+  twitterDescription: 'Contact me via Linkedin.'
+})
 </script>
 
 <template>
