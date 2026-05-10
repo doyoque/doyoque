@@ -5,16 +5,21 @@ useSeoMeta({
   ogTitle: 'Doyoque - Contact',
   ogDescription: 'Contact me via Linkedin.',
   ogType: 'article',
-  ogUrl: 'https://doyoque.vercel.app/contact',
+  ogUrl: 'https://doyoque.com/contact',
   twitterCard: 'summary',
-  twitterSite: '@4E4F57',
+  twitterSite: '@74776F74696D65',
   twitterTitle: 'Doyoque - Contact',
   twitterDescription: 'Contact me via Linkedin.'
 })
 </script>
 
 <template>
-  <div class="text-white h-screen flex items-center justify-center">
-    <h1>Contact me at Linkedin I hate being spammed via email</h1>
-  </div>
+  <main class="page-shell">
+    <section class="editorial-panel">
+      <span class="kicker">Contact</span>
+      <div class="content-prose">
+        <h1>Contact me at Linkedin I hate being spammed via email</h1>
+      </div>
+    </section>
+  </main>
 </template>

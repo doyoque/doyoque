@@ -1,59 +1,67 @@
 <script setup lang="ts">
-import { NavItem } from '@/utils/types/Nav'
+import type { NavItem } from '@/utils/types/Nav'
 
 defineProps<{
+  isDarkTheme: boolean
   navItems: NavItem[]
 }>()
 
-const isMenuOpen: boolean = ref(false)
+const emit = defineEmits<{
+  'toggle-theme': []
+}>()
+
+const isMenuOpen = ref(false)
 
 const toggleMenu = (): void => {
   isMenuOpen.value = !isMenuOpen.value
 }
 </script>
 <template>
-  <nav class="bg-white border-gray-200 dark:bg-gray-900">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-      <a href="/" class="flex items-center">
+  <nav class="sticky top-0 z-20 border-b-2 border-[rgb(var(--color-line))] bg-[rgb(var(--color-bg))]/95 backdrop-blur transition-colors duration-300">
+    <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-5 py-4 md:px-8 lg:px-10">
+      <NuxtLink to="/" class="flex min-w-0 items-center gap-3">
         <img
           src="/smile_face.svg"
-          class="h-8 mr-3 bg-white rounded-full"
+          class="h-8 w-8 rounded-full border-2 border-[rgb(var(--color-line))] bg-white"
           alt="Logo"
         />
-        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Doyoque</span>
-      </a>
+        <span class="truncate font-mono text-sm font-black uppercase tracking-[0.18em] text-[rgb(var(--color-text))]">Doyoque</span>
+      </NuxtLink>
 
-      <button
-        type="button"
-        class="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-        aria-controls="navbar-default"
-        aria-expanded="false"
-        @click="toggleMenu"
-      >
-        <span class="sr-only">Open main menu</span>
-        <svg
-          class="w-5 h-5"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="2"
-          stroke="currentColor"
-          aria-hidden="true"
+      <div class="flex items-center gap-2 md:order-2">
+        <button
+          type="button"
+          class="inline-flex h-10 w-10 items-center justify-center border-2 border-[rgb(var(--color-line))] bg-[rgb(var(--color-surface))] text-[rgb(var(--color-text))] transition hover:-translate-y-0.5 hover:bg-[rgb(var(--color-accent))] focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-accent))] focus:ring-offset-2 focus:ring-offset-[rgb(var(--color-bg))]"
+          :aria-label="isDarkTheme ? 'Switch to light theme' : 'Switch to dark theme'"
+          :title="isDarkTheme ? 'Switch to light theme' : 'Switch to dark theme'"
+          @click="emit('toggle-theme')"
         >
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
-        </svg>
-      </button>
+          <span aria-hidden="true" class="font-mono text-base font-black">{{ isDarkTheme ? 'L' : 'D' }}</span>
+        </button>
+
+        <button
+          type="button"
+          class="inline-flex h-10 w-10 items-center justify-center border-2 border-[rgb(var(--color-line))] bg-[rgb(var(--color-surface))] text-[rgb(var(--color-text))] transition hover:-translate-y-0.5 hover:bg-[rgb(var(--color-accent))] focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-accent))] focus:ring-offset-2 focus:ring-offset-[rgb(var(--color-bg))] md:hidden"
+          aria-controls="navbar-default"
+          :aria-expanded="isMenuOpen"
+          title="Open main menu"
+          @click="toggleMenu"
+        >
+          <span class="sr-only">Open main menu</span>
+          <span aria-hidden="true" class="font-mono text-lg font-black">=</span>
+        </button>
+      </div>
 
       <div
         id="navbar-default"
-        :class="['w-full md:w-auto md:flex', { hidden: !isMenuOpen }]"
+        :class="['w-full md:flex md:w-auto md:items-center', { hidden: !isMenuOpen }]"
       >
-        <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        <ul class="mt-3 grid gap-1 border-2 border-[rgb(var(--color-line))] bg-[rgb(var(--color-surface))] p-2 font-mono text-xs font-black uppercase tracking-[0.16em] md:mt-0 md:flex md:gap-2 md:border-0 md:bg-transparent md:p-0">
           <li v-for="item in navItems" :key="item.id">
             <NuxtLink
               :to="item.path"
-              class="block py-2 text-gray-700 rounded md:bg-transparent md:p-0 dark:text-gray-400 md:hover:text-blue-700 md:dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
-              exact-active-class="text-blue-700 dark:text-white"
+              class="block px-3 py-3 text-[rgb(var(--color-muted))] transition hover:bg-[rgb(var(--color-accent))] hover:text-black md:py-2"
+              exact-active-class="bg-[rgb(var(--color-text))] text-[rgb(var(--color-bg))]"
             >
               {{ item.name }}
             </NuxtLink>

@@ -1,22 +1,44 @@
 <script setup lang="ts">
-const { data } = await useAsyncData('article', () => queryContent('/article').findOne())
+const { data: articles } = await useAsyncData('articles', () =>
+  queryContent('/article')
+    .where({ _path: { $ne: '/article' } })
+    .sort({ date: -1 })
+    .find()
+)
 
 useSeoMeta({
   title: 'Doyoque - Articles',
-  description: 'Don\'t know what to write just stay tune.',
+  description: 'Available articles from Doyoque.',
   ogTitle: 'Doyoque - Articles',
-  ogDescription: 'Don\'t know what to write just stay tune.',
+  ogDescription: 'Available articles from Doyoque.',
   ogType: 'article',
-  ogUrl: 'https://doyoque.vercel.app/',
+  ogUrl: 'https://doyoque.com/article',
   twitterCard: 'summary',
-  twitterSite: '@4E4F57',
+  twitterSite: '@74776F74696D65',
   twitterTitle: 'Doyoque - Articles',
-  twitterDescription: 'Don\'t know what to write just stay tune.'
+  twitterDescription: 'Available articles from Doyoque.'
 })
 </script>
 
 <template>
-  <div class="text-white h-screen flex items-center justify-center">
-    <ContentRenderer :value="data" />
-  </div>
+  <main class="page-shell">
+    <section class="editorial-panel">
+      <span class="kicker">Writing index</span>
+      <div class="content-prose">
+        <h1>Articles</h1>
+        <div class="article-list">
+          <NuxtLink
+            v-for="article in articles"
+            :key="article._path"
+            :to="article._path"
+            class="article-card"
+          >
+            <span class="article-meta">{{ article.date ?? 'Undated' }}</span>
+            <strong>{{ article.title }}</strong>
+            <p>{{ article.description }}</p>
+          </NuxtLink>
+        </div>
+      </div>
+    </section>
+  </main>
 </template>
