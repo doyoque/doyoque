@@ -1,20 +1,25 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Doyoque - Spit Out',
-  description: 'Intentionally for whatever nonsense yap.',
+  description: 'Stay Tuned!!',
   ogTitle: 'Doyoque - Spit Out',
-  ogDescription: 'Intentionally for whatever nonsense yap.',
+  ogDescription: 'Stay Tuned!!',
   ogType: 'article',
-  ogUrl: 'https://doyoque.vercel.app/spitout',
+  ogUrl: 'https://doyoque.com/spitout',
   twitterCard: 'summary',
-  twitterSite: '@4E4F57',
+  twitterSite: '@74776F74696D65',
   twitterTitle: 'Doyoque - Spit Out',
-  twitterDescription: 'Intentionally for whatever nonsense yap.'
+  twitterDescription: 'Stay Tuned!!.'
 })
 </script>
 
 <template>
-  <div class="text-white h-screen flex items-center justify-center">
-    <h1>Intentionally for whatever nonsense yap</h1>
-  </div>
+  <main class="page-shell">
+    <section class="editorial-panel">
+      <span class="kicker">Spit out</span>
+      <div class="content-prose">
+        <h1>Stay Tuned!!</h1>
+      </div>
+    </section>
+  </main>
 </template>

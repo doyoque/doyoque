@@ -1,9 +1,5 @@
-interface NavItem {
-  id: number,
-  name: string,
+export interface NavItem {
+  id: number
+  name: string
   path: string
-}
-
-export default {
-  NavItem
 }
