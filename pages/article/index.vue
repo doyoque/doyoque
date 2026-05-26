@@ -6,6 +6,20 @@ const { data: articles } = await useAsyncData('articles', () =>
     .find()
 )
 
+const sortedArticles = computed(() => {
+  return [...(articles.value ?? [])].sort((current, next) => {
+    const nextDate = Date.parse(next.date ?? '')
+    const currentDate = Date.parse(current.date ?? '')
+    const dateDifference = (Number.isNaN(nextDate) ? 0 : nextDate) - (Number.isNaN(currentDate) ? 0 : currentDate)
+
+    if (dateDifference !== 0) {
+      return dateDifference
+    }
+
+    return String(next._path).localeCompare(String(current._path))
+  })
+})
+
 useSeoMeta({
   title: 'Doyoque - Articles',
   description: 'Available articles from Doyoque.',
@@ -28,7 +42,7 @@ useSeoMeta({
         <h1>Articles</h1>
         <div class="article-list">
           <NuxtLink
-            v-for="article in articles"
+            v-for="article in sortedArticles"
             :key="article._path"
             :to="article._path"
             class="article-card"

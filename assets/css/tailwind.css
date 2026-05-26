@@ -71,6 +71,30 @@
     @apply mt-10 text-xl font-black leading-tight md:text-2xl;
   }
 
+  .article-prose h1 + p {
+    @apply mt-10 md:mt-12;
+  }
+
+  .article-prose h2 {
+    @apply mt-14 border-t-2 border-[rgb(var(--color-line))] pt-8;
+  }
+
+  .article-prose h2 + p {
+    @apply mt-7;
+  }
+
+  .article-prose p + p {
+    @apply mt-6;
+  }
+
+  .article-prose p + h2 {
+    @apply mt-14;
+  }
+
+  .article-prose a {
+    @apply underline decoration-[rgb(var(--color-accent))] decoration-2 underline-offset-4 hover:bg-[rgb(var(--color-accent))] hover:text-black;
+  }
+
   .home-prose h2,
   .home-prose h3 {
     @apply mt-14 border-t-2 border-[rgb(var(--color-line))] pt-8;
@@ -93,7 +117,7 @@
 
   .home-prose > ul:nth-of-type(1) strong,
   .home-prose > ul:nth-of-type(2) strong {
-    @apply mb-0 block text-base font-black uppercase leading-tight tracking-normal;
+    @apply mb-0 block text-base font-black normal-case leading-tight tracking-normal;
   }
 
   .home-prose > ul:nth-of-type(1) br,

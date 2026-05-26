@@ -19,7 +19,7 @@ useSeoMeta({
   <main class="page-shell">
     <section class="editorial-panel">
       <span class="kicker">Fullstack developer</span>
-      <ContentRenderer class="content-prose home-prose" :value="data" />
+      <ContentRenderer class="content-prose article-prose home-prose" :value="data" />
     </section>
   </main>
 </template>

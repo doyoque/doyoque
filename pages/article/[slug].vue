@@ -38,7 +38,7 @@ useSeoMeta({
       </div>
       <ContentRenderer
         v-if="article"
-        class="content-prose"
+        class="content-prose article-prose"
         :value="article"
       />
     </article>
