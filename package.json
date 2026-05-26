@@ -29,6 +29,11 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "@nuxtjs/robots": "^3.0.0"
+    "@nuxtjs/robots": "^3.0.0",
+    "@x402/core": "^2.13.0",
+    "@x402/evm": "^2.13.0",
+    "@x402/paywall": "^2.13.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
   }
 }
