@@ -1,5 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  runtimeConfig: {
+    x402: {
+      receivingWallet: process.env.X402_RECEIVING_WALLET || '',
+      facilitatorUrl: process.env.X402_FACILITATOR_URL || 'https://x402.org/facilitator',
+      network: process.env.X402_NETWORK || 'eip155:84532',
+      articlePrice: process.env.X402_ARTICLE_PRICE || '$0.001'
+    }
+  },
+
   app: {
     head: {
       htmlAttrs: {

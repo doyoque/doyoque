@@ -47,7 +47,9 @@ useSeoMeta({
             :to="article._path"
             class="article-card"
           >
-            <span class="article-meta">{{ article.date ?? 'Undated' }}</span>
+            <span class="article-meta">
+              {{ article.exclusive ? 'Exclusive / ' : '' }}{{ article.date ?? 'Undated' }}
+            </span>
             <strong>{{ article.title }}</strong>
             <p>{{ article.description }}</p>
           </NuxtLink>
